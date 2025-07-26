@@ -1,0 +1,74 @@
+
+.cards {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: max-content;
+    width: 420px;
+    position: absolute;
+    top: 5%;
+    left: 35%;
+}
+@media(max-width:768px){
+    .cards{
+        position: absolute;
+        left: 10%;
+        top: 5%;
+    }
+    .note-title{
+        display: none;
+    }
+    form button{
+        width: 65px;
+        height: 25px;
+    }
+    .edit button{
+        width: 65px;
+        height: 25px;
+    }
+}
+.info {
+    color: black;
+}
+.title {
+    text-align: center;
+    font-size: xx-large;
+    color: rgb(12, 79, 234);
+}
+.img {
+    display: block;
+    margin: 0 auto;
+    height: 180px;
+    width: 200px;
+}
+.edit {
+    padding-top: 60%;
+    padding-left:81%;
+}
+.edit button {
+    height: 35px;
+    width: 105px;
+    margin-bottom: -12%;
+    margin-left: -55%;
+}
+.date {
+    margin-bottom: 0;
+    padding-top: 35%;
+    font-size: medium;
+}
+.edit button:hover {
+    transform: scale(1.15);
+    transition: 500ms ease;
+}
+h1{
+    color: white;
+    size: 30px;
+}
+form button{
+    height: 35px;
+    width: 105px;
+    margin-top: 0px;
+}
+form button:hover{
+    transform: scale(1.15);
+    transition: 500ms ease;
+}

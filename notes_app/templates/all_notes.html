@@ -1,0 +1,15 @@
+
+<h1 style="color: aqua;">welcome in your notes</h1>
+
+<h3>ALL NOTES AVAILBALE NOW :</h3>
+
+    {% for note in all_notes %}
+    <a href="{% url 'notes:detail_notes' note.slug %}">{{note}}</a><br>
+    {% endfor %}
+
+
+<br><hr><a href="{% url 'notes:add_note'%}">
+    <button>
+        Add note
+    </button>
+</a>

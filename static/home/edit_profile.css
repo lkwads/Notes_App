@@ -1,0 +1,57 @@
+
+#save{
+    height: 41px;
+    width: 100%;
+    color: white !important;
+    font-size: 20px !important;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.btn-back{
+    height: 41px;
+    width: 120px;
+    background-color: #0277bd ;
+    color: white !important;
+    font-size: 20px !important;
+    margin-top: 25px;
+
+}
+.card {
+    box-shadow: 0 5px 8px rgba(0,0,0,0.2);
+    width: 600px ;
+    height: 400px;
+    position: absolute;
+    right: 20%;
+    background-color: white !important;
+    
+}
+#delete-btn{
+    width: 150px;
+    height: 40px;
+    margin-top: 35px;
+}
+.info{
+    width: 600px;
+    right: 25%;
+    gap: 30px;
+}
+#password-btn{
+    text-decoration:none ;
+    font-size:19px;
+    width: 100%;
+}
+@media(max-width:768px){
+    .messages{
+        padding-left: 0px !important;
+        width: 70% !important;
+    }
+    .card{
+        width: 100%;
+    }
+    .card form{
+        width: 100%;
+    }
+}

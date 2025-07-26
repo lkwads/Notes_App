@@ -1,0 +1,30 @@
+.cards {
+    box-shadow: 0 5px 8px rgba(0,0,0,0.2);
+    width: 75%;
+    height: 400px;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    background-color: white;
+    gap: 40px;
+}
+.info {
+    padding: 50px;
+}
+.btn {
+    width: 120px !important;
+    height: 40px !important;
+    color: white !important;
+    font-size: 20px !important;
+    margin-top: 25px ;
+}
+.btn:hover{
+    transform: scale(1.15);
+    transition: 500ms ease;
+}
+.change_pass{
+    display: flex;
+    padding-left: 40%;
+    text-decoration: none;
+}
+

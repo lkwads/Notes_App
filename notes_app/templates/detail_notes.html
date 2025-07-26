@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'home/detail.css'%}?v=3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body >
+    <h1 class="note-title">{{note}}</h1>
+    <!-- Portfolio Item -->
+    <div class="cards">
+        {% csrf_token %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert" id="contact-message">
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if note.img %} 
+            <img class="img" src="{{note.img.url}}" alt="avatar" />
+        {% else %}
+            <img class="img" src="{% static 'home/note.jpg' %}" alt="avatar" />
+        {% endif %}
+        <br><div class="info">
+            <br><h2 class="title">{{note.title}}</h2>
+            <br><p class="description">{{note.content|striptags|truncatewords:'22'}}</p>
+            <h5 class="date" >{{note.created|striptags|date:"j M Y"}}</h5> 
+        </div>
+        <a href="{% url 'notes:note_edit' note.slug%}" class="edit">
+            <button type="button" class="btn btn-primary btn-sm"> Edit Note </button>
+        </a>
+        <form class="delete" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary btn-sm">Delete Note</button>
+        </form>  
+    </div>  
+</body>
+</html>

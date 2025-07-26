@@ -1,0 +1,27 @@
+.cards {
+    box-shadow: 0 5px 8px rgba(0,0,0,0.2);
+    width: 70%;
+    min-height: max-content;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    background-color: white;
+    gap: 40px;
+}
+body {
+    background-color: #0277bd;
+}
+.info {
+    padding: 50px;
+}
+.cards button {
+    width: 120px;
+    height: 39px;
+    background-color: #0277bd;
+    color: white;
+    margin-top: 30px;
+}
+.btn:hover {
+    transform: scale(1.15);
+    transition: 500ms ease;
+}

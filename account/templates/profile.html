@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'home/detail.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body >
+<h2>{{form.slug}}</h2>
+{% if messages %}
+<div class="message">
+    <div class="alert alert-success" style="background-color:green">
+        {% for message in messages %}
+       <strong>success</strong>{{message}}
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+    <h1>{{note}}</h1>
+    <!-- Portfolio Item -->
+    <div class="cards">
+        {% if form.img %} 
+        <img class="img" src="{{form.img.url}}" alt="avatar" />
+        {% else %}
+        <img class="img" src="{% static 'home/note.jpg' %}" alt="avatar" />
+        {% endif %}
+        <br><div class="info">
+            <p style="color: royalblue;">username :</p><h2 class="first_name">{{form.slug}}</h2>
+            <p style="color: royalblue;">bio :</p><p class="bio">{{form.bio|striptags|truncatewords:'15'}}</p>
+            <p style="color: royalblue;">habite :</p><p class="email">{{form.habite}}</p>
+            <h5 class="date" ><p style="color: royalblue;">joined at :</p>{{form.date|date:"j M Y"}}</h5> 
+        </div>
+        <a href="{%url 'account:edit' form.slug%}">
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="edit">Edit Profile</button>
+        </a>   
+    </div>  
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<link href="{% static 'home/edit.css'%}?v=3" rel="stylesheet">
+<a href="{%url 'notes:all_notes'%}"><button type="button" class="btn btn-secondary btn-sm">Go Back</button></a>
+<div class="cards" style=" min-height: max-content">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <form method="post" class="info">
+        {% csrf_token %}
+        {{form.media}}
+        {{form}}
+        <button type="button" class="btn btn-primary btn-sm">Save</button>
+    </form>
+    <script>
+        // when upload
+        window.addEventListener("DOMContentLoaded", function () {
+            const messageBox = document.getElementById("contact-message");
+            if(messageBox) {
+                // after 2 message hide
+                setTimeout(function () {
+                    messageBox.style.display = "none";
+                }, 2000);
+            }
+        });
+    </script>
+</div>
